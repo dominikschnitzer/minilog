@@ -9,14 +9,16 @@ to files.
 
 Usage in your C++ project:
 ````
-    #include "minilog.h"
+#include "minilog.h"
 ````
-[...]
-````
-    MiniLog::current_level() = logINFO;        // set debug level to INFO
-````
-[...]
 
+Somewhere, typically in main(), add:
+````
+MiniLog::current_level() = logINFO;        // set debug level to INFO
+````
+
+
+Log anywhere
 ````
 MINILOG(logDEBUG) << "DEBUG Log message";  // log at debug level
 MINILOG(logINFO) << "INFO Log message";    // log at info level
@@ -24,8 +26,8 @@ MINILOG(logINFO) << "INFO Log message";    // log at info level
 
 Would yield: 
 ````
-    16:20:33.130 INFO: INFO Log message        // show only info level
-                                               // output, since DEBUG >
-                                               // INFO
+16:20:33.130 INFO: INFO Log message        // show only info level
+                                           // output, since DEBUG >
+                                           // INFO
 ````
 
